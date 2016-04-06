@@ -228,39 +228,38 @@ And yes, at the very beginning we define different pieces of our project and the
 
 
 ## Use Case Diagram
-
-![Use Case Diagram](https://github.com/imalitavakoli/learn-uml2/blob/master/images/diagram_use-case.png)
-
 Use Case diagram defines how your system can solve a problem.  
 It's considered for high level requirement analysis, it is so general and don't get in to details so much.  
 It's also useful to make test cases when performing the testing.  
 So when we have decided different pieces of our project, now we can draw Use Case diagrams for each piece of the project. e.g: One piece of the project is the Chat system as a whole... So one Use Case diagram can demonstrate that.
 
-It's for whom:
+![Use Case Diagram](https://github.com/imalitavakoli/learn-uml2/blob/master/images/diagram_use-case.png)
+
+**It's for whom**:
 - Business stakeholders
 - system designers
 - developers
 
-Purpose:
+**Purpose**:
 - Used to gather requirements of a system.
 - Used to get an outside view of a system.
 - Identify external and internal factors influencing the system.
 
-Important elements:
+**Important elements**:
 - Actor (Something that interacts with the system, it can be human user, an internal/external application)
 - Use case (A system functionality)
 - System boundary (A box that use cases are drown inside of it and actors as external factors will be drawn outside of it)
 - relationships (They help system designers to break the system's behavior into manageable chunks)
 
-Points to consider:
-- how to define an actor? Well, if answers to the following questions are 'YES', then what you wanna define, is probably an actor:
+**Points to consider**:
+- How to define an actor? Well, if answers to the following questions are 'YES', then what you wanna define, is probably an actor:
   1. Is it a human being? e.g: User.
   2. Is it something that you cannot modify in your system? e.g: ChatSystemDatabase.
-- how to define a use case? A use case is actually a requirement and that's it. A use case must have a clear pass/fail criteria. e.g: Create a new conversation, send a message, etc...
+- How to define a use case? A use case is actually a requirement and that's it. A use case must have a clear pass/fail criteria. e.g: Create a new conversation, send a message, etc...
 - What is the `<<include>>` relationship? If two use cases have similar steps in their main flow, then instead of repeating ourselves we create another use case and connect it to the already existing two use cases via `<<include>>` relationship.
 - What is the `<<extend>>` relationship? If we have some optional steps in a use case main flow, then we will create a brand new use case for those steps and connect the optional use case with `<<extend>>` relationship to the main use case. e.g: 'check message delivery' use case can have a `<<extend>>` relationship with 'send a message' use case. Because 'check message delivery' is an optional requirement in our system.
 
-Steps:
+**Steps**:  
 1. Draw the Use Case diagram:
   - Draw actors.
   - Draw system boundary.
