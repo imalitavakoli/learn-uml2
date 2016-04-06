@@ -279,8 +279,8 @@ So when we have decided different pieces of our project, now we can draw Use Cas
 
 
 ## Activity Diagram
-Activity diagram simply shows what actions occur to achieve an ultimate goal. It actually represents the flow from one activity to another activity.
-Like Use Case diagram, Activity diagram is also drawn from a very high level(It's basically for understanding business requirements rather than implementation details).
+Activity diagram simply shows what actions occur to achieve an ultimate goal. It actually represents the flow from one activity to another activity.  
+Like Use Case diagram, Activity diagram is also drawn from a very high level(It's basically for understanding business requirements rather than implementation details).  
 Use Case Description and its steps of execution(main flow) and its extensions help us in drawing an Activity diagram.
 
 ![Activity Diagram](https://github.com/imalitavakoli/learn-uml2/blob/master/images/diagram_activity.png)
@@ -314,9 +314,344 @@ Use Case Description and its steps of execution(main flow) and its extensions he
 **Steps**:
 
 1. Draw the Activity diagram:
- - Start from the initial state.
- - Convert all the Use Case description's execution steps into a visualize picture.
- - And activities finally come to one final state to end the system process.
+  - Start from the initial state.
+  - Convert all the Use Case description's execution steps into a visualize picture.
+  - And activities finally come to one final state to end the system process.
+
+
+## Class Diagram
+A collection of class diagrams represent the whole system.  
+Classes in Class diagram show different objects that are going to be used in our system and let us know how they relate to each other.  
+Elements in class diagram are actually in abstract form and represent the blue print.
+
+![Class Diagram](https://github.com/imalitavakoli/learn-uml2/blob/master/images/diagram_class.png)
+
+**It's for whom**:
+- system designers
+- developers
+
+**Purpose**:
+- Describe responsibilities of a system.
+
+**Important elements**:
+- Class
+- relationships(such as Inheritance, Composition, Aggregation, Association, Dependency)
+- OCL (Object Constraint Language which is in three types generally: Invariant, Precondition, Postcondition)
+- Interface
+
+**Points to consider**:
+- We can show Multiplicity in classes. Multiplicity allows us to declare certain rules for our classes' attributes that are going to represent a group of objects. e.g: 'Animal' class has 'owners' property that its type is 'Owner' class(so 'owners' property is representing a group of 'Owner' objects) and also our 'Animal' class can have at most 3 owners and they should be in order of ownership. So when we're representing this attribute, we can declare it like this: - owners: Owner[1..3] {ordered}
+- Dependency and association relationships won't be shown in Class diagrams most of the times... They do exist most of the times and because of that reason drawing them all of over the place would increase unnecessary mess in our diagram.
+- What is a template class? A template or parameterized class lets us to postpone the decision as to which classes the class is going to work with... I mean we know that the class's attributes and operations will use another class, but we still don't know what type that class might be. e.g a list class, it simply lists some items, but the class type of those items vary according to different situations.
+
+**Steps**:
+
+1. Draw the Class diagram:
+  - Start drawing the base class(the very first class that will be initialized in our system) first.
+  - Then move on and draw dependent classes of the base class and then the associated classes of the base class.
+  - And we continue and draw all of the dependent and associated classes of all other classes till we represent all of the needed classes for doing the responsibility that is needed for the piece of the project that we're drawing the diagram for.
+
+
+## Object Diagram
+An Object represents an instance of a class.  
+Object diagram is very simple and shows how different objects work together.  
+An object diagram unlike the class diagram which is a blue print of the system, is a representation of a real life scenario. Elements are in concrete form to represent the real world object.  
+Object diagram is a snapshot of the system at a particular moment. It's like taking a snap of a running train, you will find a static picture and can now analyze everything more accurate...
+
+![Object Diagram](https://github.com/imalitavakoli/learn-uml2/blob/master/images/diagram_object.png)
+
+**It's for whom**:
+- system designers
+- developers
+
+**Purpose**:
+- Making the prototype of a system.
+- Understand object behavior and their relationship from practical perspective.
+
+**Important elements**:
+- Object
+- Link (Object diagram without links is useless. A link shows association between objects and the label of the link indicates its purpose.)
+
+**Points to consider**:
+- Consider only those instances which will cover the functionality(we should draw only the objects that have important data and association to prevent unnecessary complexity).
+
+**Steps**:
+
+1. Imagine all of the different scenarios that may happen based upon on the Actors decisions(Activity diagram helps us in this).
+2. Draw Object diagrams for each of those scenarios.
+
+
+## Sequence Diagram
+Sequence diagram captures the time sequence of message flow(method call) from one object to another.  
+It shows which methods are triggered and when they have been triggered exactly.
+
+![Sequence Diagram](https://github.com/imalitavakoli/learn-uml2/blob/master/images/diagram_sequence.png)
+
+**It's for whom**:
+- system designers
+- developers
+
+**Purpose**:
+- Describe the message flow in the system, interaction among objects.
+
+**Important elements**:
+- Participant(it's an Object most of the times, but they can be any part of our system that is taking part in an interaction)
+- Sequence Fragment(it's a box that contains some interactions... Has different types, that each type has a meaning. here are the different types: Optional, Negative, Alternative, Reference, Loop, Break, Parallel, Assert, Critical)
+
+**Points to consider**:
+- Draw only objects that are taking part in the interaction.
+- Draw the sequence in which the messages are flowing in order.
+- Use the right type of Sequence Fragments if they have been needed.
+
+**Steps**:
+
+1. Draw the Sequence diagram:
+  - Start drawing from the very first message that is going to be triggered in the piece of system we're going to draw its diagram. (The use Case Main flow helps us in finding where to start and where to go after that)
+  - Then we will draw the sender and the receiver participants.
+  - And continue drawing the next interactions that should and shall be triggered so that the needed functionality gets done in our system.
+
+
+## Communication Diagram
+Communication diagram captures the organization of objects in a system taking part in the message flow, also shows time sequence of messages by a numbering technique.
+
+![Communication Diagram](https://github.com/imalitavakoli/learn-uml2/blob/master/images/diagram_communication.png)
+
+**It's for whom**:
+- system designers
+- developers
+
+**Purpose**:
+- Describe the message flow in the system, structural organization of the objects, interaction among objects.
+
+**Important elements**:
+- Participant(it's an Object most of the times, but they can be any part of our system that is taking part in an interaction)
+
+**Points to consider**:
+- Draw only objects that are taking part in the interaction.
+- Show the sequence in which the messages are flowing in order by a numbering technique. We show the sequence of messages by numbering them and show nested messages(the messages that are going to be triggered because of the last message. An existence of a a nested message is because of the existence of the last message call! So that's why we call them nested messages) by adding an additional decimal point to them, actually when a message hits a new participant a nested number will be added to it. e.g msgA is moving from object A to B, it will be 1.msgA(), then as the nested message that is going to move from B to C, will be 1.1.msgB(). Actually as soon as a message hits a new participant an additional decimal point will be added to it.
+
+**Steps**:
+
+1. Draw the Communication diagram:
+  - Start drawing the very first object that is going to start the system. And all of the other participants. (The use Case Main flow helps us in finding where to start and where to go after that)
+  - Now draw the links between each of the participants that are taking part in the interaction so that they can communicate with each other.
+  - Then we write the messages one by one, by using a numbering technique.
+
+
+## Timing Diagram
+Timing diagram lists different actions that are going to happen for the piece of project that we're going to draw the diagram for and shows how long it takes each action to be processed and when each of them will be triggered.  
+Use Case Description and its steps of execution(main flow) and its extensions help us in drawing activities(states) of the Timing diagram.  
+Just like the Object diagram, we can draw a couple of Timing diagrams for different scenarios for just one piece of our project. Because different states may happen in different scenarios. And yes, most of the times it's also OK to draw one Timing diagram to show the timings when only common states are going to be triggered, it's actually up to us.
+
+![Timing Diagram](https://github.com/imalitavakoli/learn-uml2/blob/master/images/diagram_timing.png)
+
+**It's for whom**:
+- system designers
+- developers
+
+**Purpose**:
+- Define the timing between different states in the system.
+- Describe when events occur, how long it takes for participants to react and how long it takes for each individual interaction to get complete.
+
+**Important elements**:
+- Participant(it's an Object most of the times)
+- states(actions)
+
+**Points to consider**:
+- if an object doesn't have any major interactions or states, then there's no reason to draw that object in a Timing diagram.
+- Events and messages will be shown in the same way on a Timing diagram, because their difference is not as important as it is on the Sequence diagram. They will be shown only to trigger the state changes from one participant to another. The Sequence diagram already shows the messages that are passed between participants, so drawing the messages on the Timing diagram is actually a simple task.
+
+**Steps**:
+
+1. Find states, I mean different actions that are going to happen one after another in our system. We use the Use Case Description and its steps of execution(main flow) here.
+2. Find the participants that these actions(states) belong to.
+3. Match the states to participants. I mean now we write different states in order for each of the participants, to find out which state belongs to which participant and in what order the states would change step by step for each participant. This step, actually helps us when we're going to create methods for our participants(Objects).
+4. Draw the Timing diagram:
+  - We draw a table which contains participants in each raw. The order of the participants in rows is important, so in what order they should be? It's easy! We have already the Sequence diagram and all of the participants are listed at the top of that diagram, we only need to rotate the Sequence diagram 90 degrees counterclockwise and that's it! We now have the participants in right order in each row.
+  - Now we start the Lifetime line of the first action of the first participant that starts the system... As soon as we reach an event or a message we draw it and connect it to the above participant's Lifetime line and again continue with the both Lifetime lines...
+  - Then we move on and show(by using the Lifetime line) how long it takes each state of an participant to change to another state(each participant is going to have its own Lifetime line) for all of the participants.
+
+
+## Interaction Overview Diagram
+Interaction Overview diagram is so much similar to the Activity diagram, but instead of each activity in an Activity diagram, we draw interactions here.  
+Like Activity diagram, Interaction Overview diagram is also drawn from a very high level(It lets us to see the bigger picture of the project flow and shows how several interactions work together to implement a system concern).  
+It uses different interaction diagrams(Sequence, Communication, Timing) and ties them together to make a single complete picture of the interactions that shows a particular system functionality.
+
+![Interaction Overview Diagram](https://github.com/imalitavakoli/learn-uml2/blob/master/images/diagram_interaction-overview.png)
+
+**It's for whom**:
+- system designers
+- developers
+
+**Purpose**:
+- Modeling business requirements and the project work flow by using interactions.
+- Describe the parallel, branched and concurrent flow of the system.
+
+**Important elements**:
+- Interaction(It's a box that contains a part of Sequence or Communication or Timing diagrams that we've already drawn)
+
+**Points to consider**:
+- We should decide what kind of interaction diagram we should use for each individual interactions in the Interaction Overview diagram according to what is important for us to show for that interaction. e.g when we want to show an interaction, we should decide for that interaction, message order is important or the timing constraint, and according to that we finally decide which type of iteration diagram we should draw for it.
+
+**Steps**:
+
+1. Draw the Interaction Overview diagram:
+  - We start drawing from the initial node (Activity diagram can help us in finding out where to start and what interactions we should draw)
+  - Now we draw all of the interactions, and after that all of the participants will be known too.
+  - Now that we know all the participants, we write their names in the lifeline list in the interaction overview's title bar.
+  - And finally, we draw the actual flow of control between the interactions, just like how we draw the flow in the Activity diagram.
+
+
+## Component Diagram
+Component diagram does not describe the functionality of the system but it describes the components used to make those functionalities.  
+It shows us the system from a more global perspective to see what components do we have and how they work together.  
+Components themselves can be different pieces of our project, or maybe some related classes that altogether do a particular service.  
+Components are used to help us organize our system into manageable, reusable and swappable pieces of software.
+
+![Component Diagram](https://github.com/imalitavakoli/learn-uml2/blob/master/images/diagram_component.png)
+
+**It's for whom**:
+- system designers
+- developers
+
+**Purpose**:
+- Describe the organization and relationships of the components.
+- Model database schema, executables of an application, system's source code.
+
+**Important elements**:
+- Component(it's a reusable piece of code that includes classes and interfaces. It takes care of a more heavier responsibility than a single class, it actually does a service. A component must communicate through interfaces and clearly show what are its inputs and outputs)
+- Required/Provided Interface(Describe the service that a component offers. Required interface is the one that is required for a component to function and the provided interface may not be needed for a component, though most of the times they do exist as a component gets something and provides something else)
+- Port(Used to represent related interfaces attached to a component. e.g a component can have more than one provided interfaces, these interfaces will be attached to the component by port)
+
+**Points to consider**:
+- Since components have great responsibilities and are the major players in our systems, it's important to keep them loosely coupled, so that changes to a component do not affect the rest of the system. So that's why they are accessed through interfaces as an interface separates a behavior from its implementation.
+- What is the difference between Black-Box and White-Box component views? White-Box component view shows the internal structure of a component(what object the component contains) and focuses on the inner workings of the component to show how it achieves its goal through the classes that it uses, whereas Black-Box view shows the big picture of the components working together.
+
+**Steps**:
+
+1. Draw the Component diagram:
+  - It doesn't matter which component we're going to start drawing with. Just draw one with its interfaces.
+  - And then we will draw other related components next to the one that we've just drawn(if there's any related component of course). I mean we draw the component which its Provided interface is the Required interface of the last component...
+  - And we continue drawing all other components of our system in order to make a more global look of the whole system.
+
+
+## Composite Structure
+Composite Structure models how objects work together inside a class. It mainly shows the internal structure of a class.  
+Sometimes the primary UML diagrams don't capture some certain aspects of your system, that's what Composite Structure is going to do.
+
+![Composite Structure](https://github.com/imalitavakoli/learn-uml2/blob/master/images/diagram_composite-structure.png)
+
+**It's for whom**:
+- system designers
+- developers
+
+**Purpose**:
+- Describe the internal structure of a class.
+- Show design patterns in your system and how objects cooperate to achieve a goal.
+
+**Important elements**:
+- Part(Object which is used in a class)
+- Property(It's an outside data that the class has, so the data of the property for different instances of a class is the same, but data of the parts of them may be different. e.g different instances of 'Conversation' class may have different 'summary' values, but all of them share one 'Theme' with the same exact value)
+- Singular Instance(It's a specific constant which is shared across the whole instances of a class. e.g 'ApplicationName' can be a constant which is always the same and there's only one single instance of it available in all 'Conversation' instances)
+- Port(Connects our classes to other outside classes and interfaces. Because as we know a class can also have some Provided/Required interfaces. ports actually show distinct uses of a class)
+- Collaboration(Shows how objects are going to work together to accomplish a task. It actually shows us what objects are involved to do a specific task and that task can also be temporarily. Objects that are involved in a collaboration actually have some temporarily roles, so yes, another collaboration which is going to demonstrate another task may use the very same objects that are mentioned in an older collaboration, in new roles and related to each other differently to do the new task... e.g to do 'show a list of conversations' task, 'CoversationsHolder' and 'Conversation' instances collaborate together)
+
+**Points to consider**:
+- When drawing a part in the class, We also write the number of instances(multiplicity) of it. e.g a 'Conversation' class may have many 'Message' instances but only has one 'summary' instance initialized in it.
+
+**Steps**:
+
+1. Draw the Composite Structure of different classes.
+2. Draw Collaborations for different tasks.
+
+
+## Package Diagram
+Packages group similar classes. Package Diagram shows the dependencies between classes.
+
+![Package Diagram](https://github.com/imalitavakoli/learn-uml2/blob/master/images/diagram_package.png)
+
+**It's for whom**:
+- system designers
+- developers
+
+**Purpose**:
+- To group classes of similar functionality.
+- To show the dependencies between classes.
+
+**Important elements**:
+- Package
+
+**Points to consider**:
+- Dependency arrows(import, access) show that a package depends on another package or a class inside of another package. Imported elements by 'import' arrows, have public visibility in the importing package, so they can get passed on with further imports, whereas accessed elements do not. e.g if package A imports package B(B itself imports C), then package A also has access to package C, but if B used 'access' instead of 'import' arrow while importing C, then A couldn't access C.But let me also mention that many modelers don't bother about using 'import' or 'access' dependencies, they just use a generic dependency arrow without mentioning its type.
+- When showing classes we can also mention the package that they belong to(utils::Scroller) so that in our diagrams when we mention two different classes that have the same name, we can distinguish them from one another easily by referring to their package name.
+- We should avoid cyclical package dependencies... This is the time that package A, depends on package B and B also depends on A... This is not good as a change in one package, heavily affects the other one. So to avoid this we should consider depending in the order of stability, I mean a package should depend only on packages more stable than itself. In this way, an unstable package depends on many other packages and a stable package depends on few packages.
+
+**Steps**:
+
+1. Draw the Package diagram:
+  - We just think about different pieces of our project, find out what classes related to each other and put them in one package.
+  - Then with dependency arrows, show what packages import other packages in the system.
+
+
+## State Machine Diagram
+State Machine Diagram describes different states of an object in a system, and the object may act differently according to its current state.  
+These states are controlled by external or internal events.  
+Generally it defines states and it is used to model lifetime of an object. It's useful to model reactive systems(systems that respond to external or internal events).
+
+![State Machine Diagram](https://github.com/imalitavakoli/learn-uml2/blob/master/images/diagram_state-machine.png)
+
+**It's for whom**:
+- system designers
+- developers
+
+**Purpose**:
+- To model life time of a reactive system.
+
+**Important elements**:
+- State
+- Transition Arrow
+
+**Points to consider**:
+- How states look like in code? Imagine our class has a 'status' attribute and the states that we draw in the diagram will be the values of that attribute. Transitions occur when methods of our class are invoked.
+- What is State internal behavior? It's a state that itself changes some internal states inside of itself. When drawing a State internal behavior, we write 'internal behavior' which contains: 'entry' point(shows what should happen, I mean what event should be called in order to enter the whole State internal behavior), 'do'(An ongoing job that we're going to do in this state) and 'exit'(what should happen when we're exiting the whole state, I mean after the 'do' job). Unlike 'do' behavior, 'entry' and 'exit' behaviors can't be interrupted('do' will be interrupted when the 'internal transitions' guard evaluates to true). We also write 'internal transitions' exactly like normal transition arrows and they show what the state does if the guard statement of the transition evaluates to true.
+- What is Composite state? It shows the time that two states are going to happen at the same time.
+
+**Steps**:
+
+1. Draw the State Machine diagram:
+  - Think about from which event and state the system is going to get started and draw the needed state.
+  - Then we continue and draw all of the other changing states.
+
+
+## Deployment Diagram
+Deployment Diagram shows how software and hardware work together.  
+Generally every project has some business requirements and budget, an efficient deployment diagram should meet these types of requirements and be designed in a cost effective way. So that's why Deployment diagram is useful, it can for example help us to see what kind of server do we need for our project, etc.
+
+![Deployment Diagram](https://github.com/imalitavakoli/learn-uml2/blob/master/images/diagram_deployment.png)
+
+**It's for whom**:
+- system designers
+- developers
+- system engineers
+
+**Purpose**:
+- Describe runtime processing nodes(By nodes, I mean physical hardwares).
+- Model hardware details for a client/server system.
+
+**Important elements**:
+- Nodes(It can be anything that we consider as an hardware or an executable environment. e.g Computer, Server, Hard Drive, Router, Firewall)
+
+**Points to consider**:
+- When nodes are actually software, we may specify that by Stereotypes. Such as `<<executionEnvironment>>` (e.g server), `<<database>>` (e.g MySQL 5.5), `<<schema>>`, `<<artifact>>`.
+- When showing for example some `<<artifact>>` (artifacts can be any type of file such as txt, xml, etc...) inside of a `<<device>>` (like a PC or server) we should consider to show only important artifacts that are actually useful for our system designers and developers to consider in the Deployment diagram... We don't want to draw unnecessary stuff here and there to make our diagram unnecessarily complex.
+- What is `<<executionEnvironment>>`? It's where our software and codes are going to be executed in a `<<device>>`. Imagine the following example: We draw a `<<device>>` like a Smart Phone and inside of it we draw another node as a `<<executionEnvironment>>`. And yes, inside of it we can also mention our artifact which implements a component(the component makes sure that our software which is coming into the device fits the requirements of the device and it can do what it's suppose to do)
+- What is `<<deployment spec>>`? It's a special artifact that specifies how another artifact is deployed to a node. It provides information that allows another artifact to run successfully in its environment. It often has some properties like which class should be executed in the execution environment and which methods of the class can be called. e.g a configuration file which its parameters should be defined before the software can be executed.
+
+**Steps**:
+
+1. Draw the Deployment diagram:
+  - We start drawing from the first device that our software is going to be executed inside of it.
+  - Then continue and draw any other environments and databases that the device communicates with to run our software successfully.
 
 
 
@@ -327,4 +662,4 @@ So you wanna learn more about every aspects of UML? Here are some great resource
 
 * [Learning UML 2.0](http://shop.oreilly.com/product/9780596009823.do) teaches you UML from the basics.
 
-* [UML 2.0 in a Nutshell](http://shop.oreilly.com/product/9780596007959.do) Gets into details and makes you an UML hero.
+* [UML 2.0 in a Nutshell](http://shop.oreilly.com/product/9780596007959.do) gets into details and makes you an UML hero.
