@@ -207,3 +207,72 @@ Although UML does not push any particular system development... But there are so
 So **I myself prefer to draw Diagrams in the following order**: Use Case, Activity, Class, Object, Component, Package, Interactions, State Machine, Deployment.
 
 And yes, at the very beginning we define different pieces of our project and then we draw all of the needed diagrams for each piece of the project. And that's it! We would have a complete road map of our project. We have actually documented our project from all different perspectives. So that if we have ever decided to change our project's technology in the future or needed to upgrade something in it or even changed our developer's team totally... There's no worries! We have designed our whole project with UML, so we can easily do all of these stuff without messing up with the project.
+
+
+
+
+# Diagrams
+- [Use Case Diagram](#use-case-diagram)
+- [Activity Diagram](#activity-diagram)
+- [Class Diagram](#class-diagram)
+- [Object Diagram](#object-diagram)
+- [Sequence Diagram](#sequence-diagram)
+- [Communication Diagram](#communication-diagram)
+- [Timing Diagram](#timing-diagram)
+- [Interaction Overview Diagram](#interaction-overview-diagram)
+- [Component Diagram](#component-diagram)
+- [Composite Structure](#composite-structure)
+- [Package Diagram](#package-diagram)
+- [State Machine Diagram](#state-machine-diagram)
+- [Deployment Diagram](#deployment-diagram)
+
+
+## Use Case Diagram
+
+![Use Case Diagram](https://github.com/imalitavakoli/learn-uml2/blob/master/images/diagram_use-case.png)
+
+Use Case diagram defines how your system can solve a problem.  
+It's considered for high level requirement analysis, it is so general and don't get in to details so much.  
+It's also useful to make test cases when performing the testing.  
+So when we have decided different pieces of our project, now we can draw Use Case diagrams for each piece of the project. e.g: One piece of the project is the Chat system as a whole... So one Use Case diagram can demonstrate that.
+
+It's for whom:
+- Business stakeholders
+- system designers
+- developers
+
+Purpose:
+- Used to gather requirements of a system.
+- Used to get an outside view of a system.
+- Identify external and internal factors influencing the system.
+
+Important elements:
+- Actor (Something that interacts with the system, it can be human user, an internal/external application)
+- Use case (A system functionality)
+- System boundary (A box that use cases are drown inside of it and actors as external factors will be drawn outside of it)
+- relationships (They help system designers to break the system's behavior into manageable chunks)
+
+Points to consider:
+- how to define an actor? Well, if answers to the following questions are 'YES', then what you wanna define, is probably an actor:
+  1. Is it a human being? e.g: User.
+  2. Is it something that you cannot modify in your system? e.g: ChatSystemDatabase.
+- how to define a use case? A use case is actually a requirement and that's it. A use case must have a clear pass/fail criteria. e.g: Create a new conversation, send a message, etc...
+- What is the `<<include>>` relationship? If two use cases have similar steps in their main flow, then instead of repeating ourselves we create another use case and connect it to the already existing two use cases via `<<include>>` relationship.
+- What is the `<<extend>>` relationship? If we have some optional steps in a use case main flow, then we will create a brand new use case for those steps and connect the optional use case with `<<extend>>` relationship to the main use case. e.g: 'check message delivery' use case can have a `<<extend>>` relationship with 'send a message' use case. Because 'check message delivery' is an optional requirement in our system.
+
+Steps:
+1. Draw the Use Case diagram:
+  - Draw actors.
+  - Draw system boundary.
+  - And finally draw use cases inside of the system boundary.
+2. Write description for all of the use cases one by one:
+  - Use Case Name: We write the name of the Use Case we're going to describe.
+  - Related Requirement: Describe what the system shall and must do. We actually write a general description about all the works that system needs to do step by step.
+  - Goal In Context: Describe the Use Case's general final goal.
+  - Precondition: List the conditions that MUST be already true so that our system can start operating. e.g: Internet access, user must have an active account to be able to send messages, etc...
+  - Successful End Condition: List successful conclusions that the system should achieve. e.g: staff receive messages from users successfully, secure users' accounts, etc...
+  - Failed End Condition: List failed possible conclusions. We actually list the moments that system must end processing before it goes through the entire use case. e.g: user enters an invalid user/pass.
+  - Actors: List the actors. e.g: user
+  - Triggers: List the triggers. The list actually shows the events that happen before your system triggers. e.g: user creates a new conversation, sends a new message, etc...
+  - Steps of execution(Main Flow): What may happen in the system step by step. e.g: 1. user logs in. 1A. user/pass is invalid. 1B. user exits. 2. user info will be validated. etc...
+  - Extensions: List the optional functionalities that in the Diagram we have mentioned them by <<extend>> relationship. e.g: if pass is invalid 3 times (block the user)
