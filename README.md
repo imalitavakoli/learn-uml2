@@ -259,7 +259,8 @@ So when we have decided different pieces of our project, now we can draw Use Cas
 - What is the `<<include>>` relationship? If two use cases have similar steps in their main flow, then instead of repeating ourselves we create another use case and connect it to the already existing two use cases via `<<include>>` relationship.
 - What is the `<<extend>>` relationship? If we have some optional steps in a use case main flow, then we will create a brand new use case for those steps and connect the optional use case with `<<extend>>` relationship to the main use case. e.g: 'check message delivery' use case can have a `<<extend>>` relationship with 'send a message' use case. Because 'check message delivery' is an optional requirement in our system.
 
-**Steps**:  
+**Steps**:
+
 1. Draw the Use Case diagram:
   - Draw actors.
   - Draw system boundary.
@@ -275,3 +276,23 @@ So when we have decided different pieces of our project, now we can draw Use Cas
   - Triggers: List the triggers. The list actually shows the events that happen before your system triggers. e.g: user creates a new conversation, sends a new message, etc...
   - Steps of execution(Main Flow): What may happen in the system step by step. e.g: 1. user logs in. 1A. user/pass is invalid. 1B. user exits. 2. user info will be validated. etc...
   - Extensions: List the optional functionalities that in the Diagram we have mentioned them by <<extend>> relationship. e.g: if pass is invalid 3 times (block the user)
+
+
+
+
+
+# What's next?
+This was just a brief introduction to get you familiar with ES6 and its new features. Now you wanna learn more, right? So prepare yourself for lots of awesomeness! Here are some great resources that help you learn more:
+
+* [The Command Line for Web Design](http://webdesign.tutsplus.com/series/the-command-line-for-web-design--cms-777),
+This tutorial series has nothing to do with ES6 directly! But it's a great start for those web designers who are not familiar with command line tools yet but they should be!
+
+* [es6features repo](https://github.com/lukehoban/es6features#readme) explained ES6 features in more details.
+
+* [Babeljs](https://babeljs.io/) Javascript compiler.
+
+* [Javascript Style Guide](Airbnb JavaScript Style Guide) teaches a mostly reasonable approach to JavaScript.
+
+* [Exploring ES6 Book](http://exploringjs.com/es6/) is a comprehensive book about ES6 written by [Axel Rauschmayer](https://twitter.com/rauschma).
+
+* [List of more resources](https://github.com/ericdouglas/ES6-Learning) is here to get you started even faster.
