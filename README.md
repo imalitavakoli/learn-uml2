@@ -61,6 +61,8 @@ So as an adapter you work with users continually to edit the project requirement
 Any real world system is used by different users. Users can be developers, testers, business people, analysts and many more.
 So we should visualize the system from different viewer's perspective to design the best possible system.
 
+![Kruchten 4+1 view model](https://github.com/imalitavakoli/learn-uml2/blob/master/images/Kruchten-4+1-view-model.png)
+
 **Kruchten 4+1 view model** shows that a project has 5 views:
 
 - **Logical View**: Shows what a system is made up and how they interact with each other. Diagrams: Class, Object, State Machine, Interactions.
@@ -187,7 +189,7 @@ In UML diagrams, OCL is primarily used to write constraints in Class diagrams an
 OCL has four built-in types: `Boolean`(true; false), `Integer`(1; -20), `Real`(5.4), `String`("Hello!")
 OCL has the basic arithmetic, logical and comparison operators:
 - Applied to Integer, Real: `+, -, *, /, abs(), max(), min(), <, >, <=, >=`
-- Applied to All types: =, <>
+- Applied to All types: `=, <>`
 - Applied to Boolean: `and, or, xor, not`
 - Applied to String: `concat(), size(), substring(), toInteger(), toReal()`
 
@@ -200,6 +202,6 @@ There are three types of constraints:
 ## From which diagram should I get started?
 Some diagrams depend on another ones, for example Object diagram depends on Class diagram and Deployment diagram depends on Component diagram... So it is good to know which diagram we should draw first.  
 Although UML does not push any particular system development... But there are some common steps that you can take.  
-So I myself prefer to draw Diagrams in the following order: Use Case, Activity, Class, Object, Component, Package, Interactions, State Machine, Deployment.
+So **I myself prefer to draw Diagrams in the following order**: Use Case, Activity, Class, Object, Component, Package, Interactions, State Machine, Deployment.
 
 And yes, at the very beginning we define different pieces of our project and then we draw all of the needed diagrams for each piece of the project. And that's it! We would have a complete road map of our project. We have actually documented our project from all different perspectives. So that if we have ever decided to change our project's technology in the future or needed to upgrade something in it or even changed our developer's team totally... There's no worries! We have designed our whole project with UML, so we can easily do all of these stuff without messing up with the project.
