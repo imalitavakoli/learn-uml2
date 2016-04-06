@@ -112,6 +112,8 @@ Notations will be used in UML Diagrams.
 They describe the purpose of the model, things and relationships. Each type of notation looks different.
 Here I explain the most important notations and as we continue and start learning more about each diagram, you will learn all of the notations.
 
+![UML Notations](https://github.com/imalitavakoli/learn-uml2/blob/master/images/notations.png)
+
 - **Structural**:
 
   - Class Notation: Represents an object. Object can be anything having properties and responsibility.
