@@ -278,21 +278,53 @@ So when we have decided different pieces of our project, now we can draw Use Cas
   - Extensions: List the optional functionalities that in the Diagram we have mentioned them by <<extend>> relationship. e.g: if pass is invalid 3 times (block the user)
 
 
+## Activity Diagram
+Activity diagram simply shows what actions occur to achieve an ultimate goal. It actually represents the flow from one activity to another activity.
+Like Use Case diagram, Activity diagram is also drawn from a very high level(It's basically for understanding business requirements rather than implementation details).
+Use Case Description and its steps of execution(main flow) and its extensions help us in drawing an Activity diagram.
+
+![Activity Diagram](https://github.com/imalitavakoli/learn-uml2/blob/master/images/diagram_activity.png)
+
+**It's for whom**:
+- Business stakeholders
+- system designers
+- developers
+
+**Purpose**:
+- Modeling business requirements and the project work flow by using activities.
+- Describe the parallel, branched and concurrent flow of the system.
+
+**Important elements**:
+- Action (Actions that system itself needs to take as it continues operating)
+- Object Node (Shows data that is involved through the activity flow. And it's common to attach a note to the Object Node to document what information exactly that Object Node is going to represent)
+- Object input/output Pin (It's a pin that attaches to an activity to show an activity's output or input data. It's like Object Node but the Object Node simply defines that such data is included in the activity process but pin emphasizes that such data is required and needs to move from one activity to another.)
+- Decision/Merge (Shows a decision. A decision can have one input but multiple outputs, which means that after that the decision has been made, system will continue only one of the drawn outputs. Merge is also in the same diamond shape, but receives the outputs from the decision and has only one output to continue and hand it to the desire activity.)
+- Fork/Join (When multiple activities are going to happen at the same time such as threads, we show it by Fork and unlike decision all outgoing paths are going to be followed. Join is also in the same shape of Fork, But like Merge receives inputs and has only one output.)
+- Interruption Region (Demonstrates an activity that can end before the completion of the whole Activity diagram, it includes some activities plus the activity that is going to interrupt the system. So inside of the Interruption Region there's always an interrupting event. e.g: 'User Cancels' activity will be connected to 'Account Canceled' activity with an interrupting event.)
+- Flow final node (it's a circle with an X inside of it. It shows that a flow ends without ending the whole process. It is needed in forks most of the times. When multiple activities are going to happen at the same time, using the fork notation, and some of the activities may have some other paths and their path is completely different so they won't come together in a join notation, then when they are finished with their own path and activity as their path won't end the whole system's process, we will show the end of their own path with the flow final node.)
+- send/receive signal (an activity which is going to have some interaction with an external outside source. Send Signal sends info to an outside service to do a particular functionality and Receive Signal will receive some info from an outside source. Receive Signal comes after the Send Signal in most of the times.)
+- Expansion Region (Represents some groups of items that need some sort of actions to be performed on all of them)
+- Partition (It is called Swimlane too. Different activities may involve different participants. So partition will be used to show which participant is responsible for which action. e.g 'Ordering processing' activity requires 'shipping department' and 'accounts department' participants. With partition we separate these two participants and draw their related actions in them.)
+
+**Points to consider**:
+- What initial nodes can be in an Activity diagram? Well, Initial Nodes can be Initial State, Time Event, Receive Signal.
+- If a time Event is an initial node in our diagram, then it means that we like to demonstrate a repeating activity, I mean an activity which repeats after the specified time again and again.
+- In decision element we should make sure that only one guard evaluate to true because one of the outputs should continue.
+
+**Steps**:
+
+1. Draw the Activity diagram:
+ - Start from the initial state.
+ - Convert all the Use Case description's execution steps into a visualize picture.
+ - And activities finally come to one final state to end the system process.
+
 
 
 
 # What's next?
-This was just a brief introduction to get you familiar with ES6 and its new features. Now you wanna learn more, right? So prepare yourself for lots of awesomeness! Here are some great resources that help you learn more:
+In this tutorial I tried to explain what is UML, why it is useful, how to start a project using UML and what notations and diagrams does it have.  
+So you wanna learn more about every aspects of UML? Here are some great resources that help you on your way:
 
-* [The Command Line for Web Design](http://webdesign.tutsplus.com/series/the-command-line-for-web-design--cms-777),
-This tutorial series has nothing to do with ES6 directly! But it's a great start for those web designers who are not familiar with command line tools yet but they should be!
+* [Learning UML 2.0](http://shop.oreilly.com/product/9780596009823.do) teaches you UML from the basics.
 
-* [es6features repo](https://github.com/lukehoban/es6features#readme) explained ES6 features in more details.
-
-* [Babeljs](https://babeljs.io/) Javascript compiler.
-
-* [Javascript Style Guide](Airbnb JavaScript Style Guide) teaches a mostly reasonable approach to JavaScript.
-
-* [Exploring ES6 Book](http://exploringjs.com/es6/) is a comprehensive book about ES6 written by [Axel Rauschmayer](https://twitter.com/rauschma).
-
-* [List of more resources](https://github.com/ericdouglas/ES6-Learning) is here to get you started even faster.
+* [UML 2.0 in a Nutshell](http://shop.oreilly.com/product/9780596007959.do) Gets into details and makes you an UML hero.
