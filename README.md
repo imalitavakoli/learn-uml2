@@ -269,7 +269,7 @@ So when we have decided different pieces of our project, now we can draw Use Cas
   - Draw actors.
   - Draw system boundary.
   - And finally draw use cases inside of the system boundary.
-2. Write description for all of the use cases one by one:
+2. Now write description for all of the use cases one by one:
   - Use Case Name: We write the name of the Use Case we're going to describe.
   - Related Requirement: Describe what the system shall and must do. We actually write a general description about all the works that system needs to do step by step.
   - Goal In Context: Describe the Use Case's general final goal.
@@ -278,8 +278,8 @@ So when we have decided different pieces of our project, now we can draw Use Cas
   - Failed End Condition: List failed possible conclusions. We actually list the moments that system must end processing before it goes through the entire use case. e.g: user enters an invalid user/pass.
   - Actors: List the actors. e.g: user
   - Triggers: List the triggers. The list actually shows the events that happen before your system triggers. e.g: user creates a new conversation, sends a new message, etc...
-  - Steps of execution(Main Flow): What may happen in the system step by step. e.g: 1. user logs in. 1A. user/pass is invalid. 1B. user exits. 2. user info will be validated. etc...
-  - Extensions: List the optional functionalities that in the Diagram we have mentioned them by <<extend>> relationship. e.g: if pass is invalid 3 times (block the user)
+  - Steps of execution(Main Flow): What may happen in the system step by step. e.g: 1. user logs in. 2. user info will be validated. etc...
+  - Extensions: Here we list the alternative ways that may happen in the main flow. e.g: 1.A. user/pass is invalid. 1.B. user exits. Please also **note that** in here we also mention the optional functionalities that in the Diagram we have mentioned them by the `<<extend>>` relationship. e.g: 1.A. if pass is invalid 3 times, then block the user.
 
 
 ## Activity Diagram
@@ -345,7 +345,7 @@ Elements in class diagram are actually in abstract form and represent the blue p
 
 **Points to consider**:
 - We can show Multiplicity in classes. Multiplicity allows us to declare certain rules for our classes' attributes that are going to represent a group of objects. e.g: 'Animal' class has 'owners' property that its type is 'Owner' class(so 'owners' property is representing a group of 'Owner' objects) and also our 'Animal' class can have at most 3 owners and they should be in order of ownership. So when we're representing this attribute, we can declare it like this: - owners: Owner[1..3] {ordered}
-- Dependency and association relationships won't be shown in Class diagrams most of the times... They do exist most of the times and because of that reason drawing them all of over the place would increase unnecessary mess in our diagram.
+- Dependency and association relationships won't be shown in Class diagrams most of the times... Because in reality most of the classes have these relationships with each other, so we don't draw them in our diagrams to decrease unnecessary mess.
 - What is a template class? A template or parameterized class lets us to postpone the decision as to which classes the class is going to work with... I mean we know that the class's attributes and operations will use another class, but we still don't know what type that class might be. e.g a list class, it simply lists some items, but the class type of those items vary according to different situations.
 
 **Steps**:
