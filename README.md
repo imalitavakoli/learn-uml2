@@ -6,6 +6,15 @@ In this tutorial I tried to summarize everything and have explained all of the i
 
 So if you're ready, then let's dive in!
 
+## Are you a visual learner?
+Then you don't have to read this tutorial! Instead sit back, relax, and just [watch my UML video course](https://www.youtube.com/playlist?list=PLvFV7-kxnh4jXExsmfBVPmy0DYXkNTZk4) in order to learn UML faster, easier, and more efficiently!
+
+In most of the cases a tutorial video can be a better choice in order to learn something new, specially for visual learners who prefer learning through moving images, sound, and often text as well. Video learning can create more cognitive connections in your brain as you're learning through more than one of your senses; so multisensory learning which a tutorial video provides is a better choice than single-sensory inputs which come from a written text.
+
+[Click here to watch UML Video Course](https://www.youtube.com/playlist?list=PLvFV7-kxnh4jXExsmfBVPmy0DYXkNTZk4)
+
+[![Click to Play Tutorial Video](https://github.com/imalitavakoli/learn-uml2/blob/master/images/tutorial-video.png)](https://www.youtube.com/playlist?list=PLvFV7-kxnh4jXExsmfBVPmy0DYXkNTZk4)
+
 
 
 
